@@ -74,10 +74,14 @@ public class CollectorDemo1 {
 
         Map<Boolean, Long> count = persons.stream().collect(Collectors.partitioningBy(person -> person.getAge() >= 18, Collectors.counting()));
         System.out.println(count);
-//
+//  
 //        String names = persons.stream().collect(Collectors.partitioningBy(person -> person.getAge() >= 18,
 //                Collectors.groupingBy(Person::getSex ,));
 //        System.out.println(names);
+
+        System.out.println(Integer.valueOf(' '));
+        System.out.println(Integer.valueOf(' '));
+        System.out.println(Integer.valueOf('\u00a0'));
 
     }
 }
