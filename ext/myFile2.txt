@@ -1,0 +1,9 @@
+idea快捷键
+前提：设置为eclipse模式
+
+1. 代码提示: Alt+/
+2. 快速TryCatch: Ctrl+Alt+T
+3. 万能快捷键: Alt+Enter
+4. 删除当前行: Ctrl+D
+5. 文件查找: Ctrl+E
+6. 关闭当前TAB页: Ctrl+F4

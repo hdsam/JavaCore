@@ -1,0 +1,12 @@
+06-05 22:42:16.995 [main] ERROR org.ygy.study.javacore.exception.Person
+发了异常
+
+java.lang.ArithmeticException: / by zero
+	at org.ygy.study.javacore.exception.Person.foo(CommonsLoggingDemo.java:35) [classes/:?]
+	at org.ygy.study.javacore.exception.CommonsLoggingDemo.main(CommonsLoggingDemo.java:23) [classes/:?]
+2020-06-05 22:42:37.747 [main] ERROR org.ygy.study.javacore.exception.Person
+发了异常
+
+java.lang.ArithmeticException: / by zero
+	at org.ygy.study.javacore.exception.Person.foo(CommonsLoggingDemo.java:35) [classes/:?]
+	at org.ygy.study.javacore.exception.CommonsLoggingDemo.main(CommonsLoggingDemo.java:23) [classes/:?]
