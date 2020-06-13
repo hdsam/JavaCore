@@ -1,6 +1,7 @@
 package org.ygy.study.javacore.lambda;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -65,6 +66,32 @@ public class CollectorDemo1 {
                                                         new Person("Tom",9,"F" ),
                                                         new Person("Lucy",18,"M" )  );
 
+    private static class PersonForm{
+        List<Person> personList ;
+
+        public PersonForm(List<Person> personList) {
+            this.personList = personList;
+        }
+
+        @Override
+        public String toString() {
+            return "PersonForm{" +
+                    "personList=" + personList +
+                    '}';
+        }
+    }
+
+    private static class PersonGroup{
+        String ageRange;
+
+        PersonForm personForm ;
+
+        public PersonGroup(String ageRange, PersonForm personForm) {
+            this.ageRange = ageRange;
+            this.personForm = personForm;
+        }
+    }
+
     public static void main(String[] args) {
         Double avgAge = persons.stream().collect(Collectors.averagingInt(Person::getAge));
         System.out.println(avgAge);
@@ -74,10 +101,13 @@ public class CollectorDemo1 {
 
         Map<Boolean, Long> count = persons.stream().collect(Collectors.partitioningBy(person -> person.getAge() >= 18, Collectors.counting()));
         System.out.println(count);
-//
-//        String names = persons.stream().collect(Collectors.partitioningBy(person -> person.getAge() >= 18,
-//                Collectors.groupingBy(Person::getSex ,));
-//        System.out.println(names);
+
+        Map<Boolean, Collection<PersonForm>> names = persons.stream().collect(Collectors.partitioningBy(person -> person.getAge() >= 18,
+                Collectors.collectingAndThen(
+                        Collectors.groupingBy(Person::getSex, Collectors.collectingAndThen(Collectors.toList(), PersonForm::new))
+                , Map::values)));
+        System.out.println("POS:"+names.get(Boolean.TRUE));
+        System.out.println("NEG:"+names.get(Boolean.FALSE));
 
     }
 }

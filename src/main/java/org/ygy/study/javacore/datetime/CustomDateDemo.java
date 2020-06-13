@@ -87,11 +87,11 @@ public class CustomDateDemo {
         int month = calendar.get(Calendar.MONTH) + 1;
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int mintue = calendar.get(Calendar.MINUTE);
+        int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
         int millisecond = calendar.get(Calendar.MILLISECOND);
 
-        System.out.println(year + "-" + month + "-" + day + " " + hour + ":" + mintue + ":" + second + "." + millisecond);
+        System.out.println(year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "." + millisecond);
     }
 
 
