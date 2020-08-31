@@ -53,8 +53,8 @@ public class DateTimeInAction {
         long ts = zdt.toEpochSecond();
 
         //  long --> Date
-        Date date = new Date(ts);
-        System.out.println(date);
+        Date date = new Date(ts * 1000);
+        System.out.println("当前日期："+ date);
 
 
         //long -->Calendar
